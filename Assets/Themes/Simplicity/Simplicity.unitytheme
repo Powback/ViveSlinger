@@ -1,0 +1,9 @@
+[Base]
+UseSystemColor = True
+AllowSystemColor = True
+AllowCustomization = True
+AllowColorCustomization = True
+Palette = Slate
+
+[+Brushed]
+WindowBackgroundOverride = CircleWhite10.png
