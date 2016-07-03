@@ -1,6 +1,10 @@
 [Files]
-(data)
+(gitattributes)
 =$
+
+(gitignore)
+
+(data)
 FileManager
 (htm)
 UpgradeLog
@@ -93,6 +97,8 @@ websocket-sharp
 ShaderForge
 (mat)
 =$/Assets/Materials
+House 50x300x500
+Line
 Red
 Standard
 White
@@ -185,6 +191,32 @@ white
 valves_worn_albedo
 =$/Assets/TheLabRenderer/Resources
 adaptive_quality_debug
+=$/Assets/World/Materials
+ConcreteMat1
+ConcreteMat2
+ConcreteMat3
+ConcreteMat4
+ConcreteMat5
+ConcreteMat6
+ConcreteMat7
+ConcreteMat8
+ConcreteMat9
+Glass
+Glass1
+Glass10
+Glass2
+Glass3
+Glass4
+Glass5
+Glass6
+Glass7
+Glass8
+Glass9
+Ground
+Office1
+Office10
+Office8
+Office9
 =$/Assets/ZRNAssets/006441_09646_1_1/Materials
 006441_09646_1_1_0
 006441_09646_1_1_1
@@ -899,12 +931,15 @@ Player Diamond
 PointerPrefab
 =$/Assets/Prefabs
 Hook
+Line
 =$/Assets/SteamVR/Prefabs
 [CameraRig]
 [Status]
 [SteamVR]
 =$/Assets/SteamVR/Resources
 SteamVR_ExternalCamera
+=$/Assets/World
+Billboard
 =$/Assets/ZRNAssets/PQAssets/Query-Chan-SD/Prefabs
 QueryChanSDMecanimSapporo
 =$/Assets/ZRNAssets/PQAssets/Query-Chan-SD/Sapporo_Props/SnowBallFightObject/Prefabs
@@ -1661,6 +1696,27 @@ Robot_Color
 Robot_Normal
 =$/Assets/Photon Unity Networking/Editor/PhotonNetwork
 background
+=$/Assets/World/Textures
+Glass1
+Glass10
+Glass2
+Glass3
+Glass4
+Glass5
+Glass6
+Glass7
+Glass8
+Glass9
+Office1
+Office10
+Office2
+Office3
+Office4
+Office5
+Office6
+Office7
+Office8
+Office9
 (sbsar)
 =$/Assets/Photon Unity Networking/Demos/MarcoPolo-Tutorial/Substances_Free
 Pavement_01
@@ -1899,6 +1955,7 @@ UnityEditor.TreeViewGUI.s_Styles
 Fixed-Aurulentsansmonoregular
 [Folders]
 =$
+
 
 
 
@@ -2220,6 +2277,11 @@ Fixed-Aurulentsansmonoregular
 
 +/Simplicity
 
+
+
+=$/Assets
+
++/World
 
 
 =$/Assets

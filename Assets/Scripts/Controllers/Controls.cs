@@ -72,6 +72,7 @@ public class Controls : MonoBehaviour
     void DoApplicationMenuPressed(object sender, ControllerInteractionEventArgs e)
     {
         DebugLogger(e.controllerIndex, "APPLICATION MENU", "pressed down", e);
+        GameManager.Instance.player.transform.position = Vector3.zero;
     }
 
     void DoApplicationMenuReleased(object sender, ControllerInteractionEventArgs e)

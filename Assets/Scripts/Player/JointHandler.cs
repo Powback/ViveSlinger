@@ -83,20 +83,32 @@ public class JointHandler : SingletonComponent<JointHandler> {
         configurableJoints[id].linearLimit = linearLimit;
     }
 
-    public void SetLimit(int id, float limit, string mode)
+    public void SetLimit(int id, float limit, string mode, int smoothing)
     {
         if (!JointExists(id))
             return;
 
         SoftJointLimit linearLimit = configurableJoints[id].linearLimit;
         if (mode == "a")
-            linearLimit.limit = limit;
+        {
+            if (smoothing == 0)
+                linearLimit.limit = limit;
+
+            if (smoothing == 1)
+                linearLimit.limit = Mathf.Lerp(limit, linearLimit.limit, Time.deltaTime);
+        }
 
         if (mode == "p")
         {
             float curLimit = linearLimit.limit;
             float newLimit = (curLimit/100)*limit;
-            linearLimit.limit = newLimit;
+
+            if (smoothing == 0)
+                linearLimit.limit = newLimit;
+
+            if (smoothing == 1)
+                linearLimit.limit = Mathf.Lerp(linearLimit.limit, newLimit,  Time.deltaTime);
+            
         }
         configurableJoints[id].linearLimit = linearLimit;
     }
@@ -118,7 +130,7 @@ public class JointHandler : SingletonComponent<JointHandler> {
         linearLimit.damper = limit;
         configurableJoints[id].linearLimitSpring = linearLimit;
     }
-    public void UpdateAnchor(int id, Vector3 anchor)
+    public void SetAnchorPos(int id, Vector3 anchor)
     {
         if(!JointExists(id)) 
             return;
@@ -139,4 +151,6 @@ public class JointHandler : SingletonComponent<JointHandler> {
             configurableJoints[id].connectedAnchor = pos;
         }
     }
+
+
 }
